@@ -8,5 +8,7 @@ AutoTest.java has test cases for Auto.java (and by extension GasTank and Engine)
 
 to compile and run properly
 
+```
 javac AutoTest.java
 java AutoTest
+```
