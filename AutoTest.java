@@ -1,3 +1,6 @@
+//Written by: Lora Streeter
+//Test file to test Auto.java
+
 public class AutoTest
 {
 	public static void main(String[] args)
