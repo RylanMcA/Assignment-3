@@ -3,7 +3,7 @@ import java.awt.Graphics;
 
 public class DrivePanel extends JPanel{
 
-    DrivePanel(){}
+    DrivePanel(int[][] userInput, Auto car){}
 
     public void paintComponent(Graphics g){
         super.paintComponent(g);
