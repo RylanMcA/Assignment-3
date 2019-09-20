@@ -10,7 +10,8 @@ public class Assignment3{
         String mpg = JOptionPane.showInputDialog("What is the miles per gallon on the engine?");
         String maxSpeed = JOptionPane.showInputDialog("What is the max speed of the car?");
 
-        //Parse strings to ints         TBD: Add this into "error checking when asking the associated question"
+        //Parse strings to ints         
+        //TBD: Add this into error checking when asking the associated question
         int iMaxFuel = Integer.parseInt(maxFuel);
         int iMpg = Integer.parseInt(mpg);
         int iMaxSpeed = Integer.parseInt(maxSpeed);
