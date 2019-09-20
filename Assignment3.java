@@ -1,10 +1,16 @@
-import javax.swing.JPanel;
-import java.awt.Graphics;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-
-public class Assignment3 extends JPanel {
+public class Assignment3{
     public static void main(String[] args){
-        //drawCircle(0,auto.getX,-auto.getY(),0)
+        DrivePanel panel = new DrivePanel();
+        JFrame app = new JFrame();
+
+        
+
+        app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        app.add(panel);
+        app.setSize(600,600);
+        app.setVisible(true);
     }
 
 }
