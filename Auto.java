@@ -6,8 +6,8 @@ public class Auto{
     private int y;
 
     public Auto(String desc, int maxFuel, Engine newEngine){
-        x = 300;
-        y = 300;
+        x = 0;
+        y = 0;
         tank = new GasTank(maxFuel);
 
         //Checking DESC 
