@@ -6,8 +6,8 @@ public class Auto{
     private int y;
 
     public Auto(String desc, int maxFuel, Engine newEngine){
-        x = 0;
-        y = 0;
+        x = 300;
+        y = 300;
         tank = new GasTank(maxFuel);
 
         //Checking DESC 
@@ -76,10 +76,10 @@ public class Auto{
         } else {
             m = (yRatio/xRatio);
         }   
-        if(xRatio < 0){
+        if(xRatio < 0){ //x is negative
             this.x = x - (int) (distance*Math.sqrt(1/(1+m*m)));
             this.y = y - (int) (m*distance*Math.sqrt(1/(1+m*m)));
-        } else {
+        } else { //x is positive. 
             this.x = x + (int) (distance*Math.sqrt(1/(1+(m*m))));
             this.y = y + (int) (m*distance*Math.sqrt(1/(1+(m*m))));
         }
