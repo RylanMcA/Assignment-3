@@ -16,8 +16,7 @@ public class Assignment3{
         int iMpg = Integer.parseInt(mpg);
         int iMaxSpeed = Integer.parseInt(maxSpeed);
 
-
-        //Create the objects I need.
+        //Create the objects needed.
         Engine eng = new Engine(engineDesc, iMpg, iMaxSpeed);
         Auto car = new Auto(desc, iMaxFuel, eng);        
 
@@ -42,8 +41,6 @@ public class Assignment3{
         //Pass info to the DrivePanel class to create the coordinate GUI
         DrivePanel panel = new DrivePanel(userDist, userRatio, car);
         
-
-
         //Displaying GUI
         JFrame app = new JFrame();
         app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

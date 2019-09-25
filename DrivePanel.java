@@ -14,11 +14,7 @@ public class DrivePanel extends JPanel{
             coords[i][0] = car.getX();
             coords[i][1] = car.getY();
         }
-
-
     }
-
-
 
 
     public void paintComponent(Graphics g){
