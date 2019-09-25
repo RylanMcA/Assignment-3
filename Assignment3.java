@@ -25,10 +25,10 @@ public class Assignment3{
         Auto car = new Auto(desc, iMaxFuel, eng);
 
         //TBD BELOW: Get IO for # of legs and each of their distances, xRatio(s), and yRatio(s)
-
+        
 
         //2D array to store n legs of the trip with the distance, xRatio(s), and yRatio(s)
-        int[][] userInput = new int[3][3]; 
+        int[][] userInput = new int[n][3]; 
         
         //Pass info to the DrivePanel class to create the coordinate GUI
         DrivePanel panel = new DrivePanel(userInput, car);
