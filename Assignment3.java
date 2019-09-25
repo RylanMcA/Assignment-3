@@ -16,23 +16,34 @@ public class Assignment3{
         int iMpg = Integer.parseInt(mpg);
         int iMaxSpeed = Integer.parseInt(maxSpeed);
 
-        JOptionPane.showMessageDialog(null,desc+","+maxFuel+","+engineDesc+","+mpg+","+maxSpeed);
 
-        //Create the engine copy
+        //Create the objects I need.
         Engine eng = new Engine(engineDesc, iMpg, iMaxSpeed);
-
-        //Create auto copy
-        Auto car = new Auto(desc, iMaxFuel, eng);
-
-        //TBD BELOW: Get IO for # of legs and each of their distances, xRatio(s), and yRatio(s)
-        
+        Auto car = new Auto(desc, iMaxFuel, eng);        
 
         //2D array to store n legs of the trip with the distance, xRatio(s), and yRatio(s)
-        int[][] userInput = new int[n][3]; 
+        String n = JOptionPane.showInputDialog("How many legs are in your trip?");
+        int legs = Integer.parseInt(n);
+        int[] userDist = new int[legs];
+        double[][] userRatio = new double[legs][2]; 
+
+        //Gathers the distance and the x/y ratio for each leg of the trip
+        for(int x=0;x<legs;x++){
+            String d = JOptionPane.showInputDialog("What distance do you travel in leg: "+x+"?");
+            String xr = JOptionPane.showInputDialog("What is the x ratio of leg: "+x+"?");
+            String yr = JOptionPane.showInputDialog("What is the y ratio of leg: "+x+"?");
+
+            userDist[x] = Integer.parseInt(d);
+            userRatio[x][0] = Double.parseDouble(xr);
+            userRatio[x][1] = Double.parseDouble(yr);
+
+        }
         
         //Pass info to the DrivePanel class to create the coordinate GUI
-        DrivePanel panel = new DrivePanel(userInput, car);
+        DrivePanel panel = new DrivePanel(userDist, userRatio, car);
         
+
+
         //Displaying GUI
         JFrame app = new JFrame();
         app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
