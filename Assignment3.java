@@ -28,9 +28,9 @@ public class Assignment3{
 
         //Gathers the distance and the x/y ratio for each leg of the trip
         for(int x=0;x<legs;x++){
-            String d = JOptionPane.showInputDialog("What distance do you travel in leg: "+x+"?");
-            String xr = JOptionPane.showInputDialog("What is the x ratio of leg: "+x+"?");
-            String yr = JOptionPane.showInputDialog("What is the y ratio of leg: "+x+"?");
+            String d = JOptionPane.showInputDialog("What distance do you travel in leg: "+(x+1)+"?");
+            String xr = JOptionPane.showInputDialog("What is the x ratio of leg: "+(x+1)+"?");
+            String yr = JOptionPane.showInputDialog("What is the y ratio of leg: "+(x+1)+"?");
 
             userDist[x] = Integer.parseInt(d);
             userRatio[x][0] = Double.parseDouble(xr);

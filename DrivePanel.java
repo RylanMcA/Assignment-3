@@ -20,9 +20,14 @@ public class DrivePanel extends JPanel{
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         
-        int height = getHeight();
-        int width = getWidth();
+        int height = getHeight();   //y
+        int width = getWidth();     //x
         
+        for(int i=0;i<coords.length-1;i++){
+            
+
+        }
+
         g.drawLine(0,height/2,width,height/2);
         g.drawLine(width/2,0,width/2,height);
 
