@@ -1,3 +1,5 @@
+import java.text.NumberFormat;
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 public class Assignment3{
@@ -45,10 +47,14 @@ public class Assignment3{
             String xr = JOptionPane.showInputDialog(car.getDescription()+"\nWhat is the x ratio of leg: "+(x+1)+"?");
             String yr = JOptionPane.showInputDialog(car.getDescription()+"\nWhat is the y ratio of leg: "+(x+1)+"?");
 
+            try {
             userDist[x] = Integer.parseInt(d);
             userRatio[x][0] = Double.parseDouble(xr);
             userRatio[x][1] = Double.parseDouble(yr);
-
+            } catch(NumberFormatException e){
+                System.out.println("Invalid Entry. Exiting.");
+                System.exit(0);
+            }
         }
         
         //Pass info to the DrivePanel class to create the coordinate GUI
