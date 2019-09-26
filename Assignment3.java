@@ -10,20 +10,32 @@ public class Assignment3{
         String mpg = JOptionPane.showInputDialog("What is the miles per gallon on the engine?");
         String maxSpeed = JOptionPane.showInputDialog("What is the max speed of the car?");
 
-        //Parse strings to ints         
-        //TBD: Add this into error checking when asking the associated question
-        int iMaxFuel = Integer.parseInt(maxFuel);
-        int iMpg = Integer.parseInt(mpg);
-        int iMaxSpeed = Integer.parseInt(maxSpeed);
+        //Parse strings to ints through try catch to make sure that inputs are numbers
+        int milesPer = 0, iMaxSpeed = 0, iMaxFuel = 0;
+        try{
+            iMaxFuel = Integer.parseInt(maxFuel);
+            milesPer = Integer.parseInt(mpg);
+            iMaxSpeed = Integer.parseInt(maxSpeed);
+        } catch(NumberFormatException e){
+            System.out.println("Invalid Entry. Exiting.");
+            System.exit(0);
+        }
 
         //Create the objects needed.
-        Engine eng = new Engine(engineDesc, iMpg, iMaxSpeed);
+        Engine eng = new Engine(engineDesc, milesPer, iMaxSpeed);
         Auto car = new Auto(desc, iMaxFuel, eng);  
         car.fillUp();      
 
         //2D array to store n legs of the trip with the distance, xRatio(s), and yRatio(s)
         String n = JOptionPane.showInputDialog(car.getDescription()+"\nHow many legs are in your trip?");
-        int legs = Integer.parseInt(n);
+        int legs = 0;
+        try { 
+        legs = Integer.parseInt(n); 
+        } catch (NumberFormatException e){
+            System.out.println("Invalid Entry. Exiting.");
+            System.exit(0);
+        }
+
         int[] userDist = new int[legs];
         double[][] userRatio = new double[legs][2]; 
 

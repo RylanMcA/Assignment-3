@@ -6,6 +6,8 @@ public class DrivePanel extends JPanel{
     private int[][] coords;
     DrivePanel(int[] uDist, double[][] uRatio, Auto car){
         coords = new int[uRatio.length][2];
+
+        //Generating Coordinates
         for(int i=0;i<uRatio.length;i++){
             car.drive(uDist[i],uRatio[i][0],uRatio[i][1]);
             coords[i][0] = car.getX();
@@ -21,7 +23,7 @@ public class DrivePanel extends JPanel{
         g.drawLine(0,getHeight(),coords[0][0],getHeight()-coords[0][1]);
         g.drawString("("+coords[0][0]+","+coords[0][1]+")", coords[0][0]+10, getHeight()-coords[0][1]);
 
-        //0 to array length-1 since i have to use the i and i+1
+        //0 to array length-1 since i have to uses the i and i+1
         for(int i=0;i<coords.length-1;i++){
             g.drawLine(coords[i][0],getHeight()-coords[i][1],coords[i+1][0],getHeight()-coords[i+1][1]);
             g.drawString("("+coords[i+1][0]+","+coords[i+1][1]+")", coords[i+1][0]+10, getHeight()-coords[i+1][1]);
