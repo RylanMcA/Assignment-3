@@ -1,5 +1,3 @@
-import java.text.NumberFormat;
-
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 public class Assignment3{
