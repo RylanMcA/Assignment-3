@@ -24,7 +24,7 @@ public class Assignment3{
         //Create the objects needed.
         Engine eng = new Engine(engineDesc, milesPer, iMaxSpeed);
         Auto car = new Auto(desc, iMaxFuel, eng);  
-        car.fillUp();   
+
         
         JOptionPane.showConfirmDialog(null, car.getDescription());
 
@@ -42,6 +42,7 @@ public class Assignment3{
         double[][] userRatio = new double[legs][2]; 
 
         //Gathers the distance and the x/y ratio for each leg of the trip
+        car.fillUp();  
         for(int x=0;x<legs;x++){
             String d = JOptionPane.showInputDialog("What distance do you travel in leg: "+(x+1)+"?");
             String xr = JOptionPane.showInputDialog("What is the x ratio of leg: "+(x+1)+"?");
@@ -57,7 +58,7 @@ public class Assignment3{
             }
         }
         
-        //Pass info to the DrivePanel class to create the coordinate GUI
+        //Pass info to the DrivePanel class to create the coordinate GU 
         DrivePanel panel = new DrivePanel(userDist, userRatio, car);
         
         //Displaying GUI

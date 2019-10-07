@@ -6,7 +6,7 @@ public class DrivePanel extends JPanel{
     private int[][] coords;
     DrivePanel(int[] uDist, double[][] uRatio, Auto car){
         coords = new int[uRatio.length][2];
-
+        
         //Generating Coordinates
         for(int i=0;i<uRatio.length;i++){
             car.drive(uDist[i],uRatio[i][0],uRatio[i][1]);
