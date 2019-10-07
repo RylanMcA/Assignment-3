@@ -71,17 +71,16 @@ public class Auto{
         }
         
         double m = 0;
-        if(xRatio == 0){
-            m = 0;
-        } else {
-            m = (yRatio/xRatio);
-        }   
-        if(xRatio < 0){ //x is negative
+        m = (yRatio/xRatio);
+        if(xRatio < 0){
             this.x = x - (int) (distance*Math.sqrt(1/(1+m*m)));
             this.y = y - (int) (m*distance*Math.sqrt(1/(1+m*m)));
-        } else { //x is positive. 
+        } else {
             this.x = x + (int) (distance*Math.sqrt(1/(1+(m*m))));
             this.y = y + (int) (m*distance*Math.sqrt(1/(1+(m*m))));
+        }
+        if(xRatio == 0){
+            this.y = 0;
         }
         return distance;
     }
