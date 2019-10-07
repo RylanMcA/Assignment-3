@@ -7,7 +7,7 @@ public class Assignment3{
         String desc = JOptionPane.showInputDialog("What is the description of this car?");
         String maxFuel = JOptionPane.showInputDialog("What is the max fuel capacity of the car?");
         String engineDesc = JOptionPane.showInputDialog("What is the description of the engine?");
-        String mpg = JOptionPane.showInputDialog("What is the miles per gallon on the engine?");
+        String mpg = JOptionPane.showInputDialog("What is the miles per gallon on the car?");
         String maxSpeed = JOptionPane.showInputDialog("What is the max speed of the car?");
 
         //Parse strings to ints through try catch to make sure that inputs are numbers
@@ -24,10 +24,12 @@ public class Assignment3{
         //Create the objects needed.
         Engine eng = new Engine(engineDesc, milesPer, iMaxSpeed);
         Auto car = new Auto(desc, iMaxFuel, eng);  
-        car.fillUp();      
+        car.fillUp();   
+        
+        JOptionPane.showConfirmDialog(null, car.getDescription());
 
         //2D array to store n legs of the trip with the distance, xRatio(s), and yRatio(s)
-        String n = JOptionPane.showInputDialog(car.getDescription()+"\nHow many legs are in your trip?");
+        String n = JOptionPane.showInputDialog("\nHow many legs are in your trip?");
         int legs = 0;
         try { 
         legs = Integer.parseInt(n); 
@@ -41,9 +43,9 @@ public class Assignment3{
 
         //Gathers the distance and the x/y ratio for each leg of the trip
         for(int x=0;x<legs;x++){
-            String d = JOptionPane.showInputDialog(car.getDescription()+"\nWhat distance do you travel in leg: "+(x+1)+"?");
-            String xr = JOptionPane.showInputDialog(car.getDescription()+"\nWhat is the x ratio of leg: "+(x+1)+"?");
-            String yr = JOptionPane.showInputDialog(car.getDescription()+"\nWhat is the y ratio of leg: "+(x+1)+"?");
+            String d = JOptionPane.showInputDialog("What distance do you travel in leg: "+(x+1)+"?");
+            String xr = JOptionPane.showInputDialog("What is the x ratio of leg: "+(x+1)+"?");
+            String yr = JOptionPane.showInputDialog("What is the y ratio of leg: "+(x+1)+"?");
 
             try {
             userDist[x] = Integer.parseInt(d);
