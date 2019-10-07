@@ -11,14 +11,27 @@ public class Assignment3{
         String maxSpeed = JOptionPane.showInputDialog("What is the max speed of the car?");
 
         //Parse strings to ints through try catch to make sure that inputs are numbers
-        int milesPer = 0, iMaxSpeed = 0, iMaxFuel = 0;
-        try{
-            iMaxFuel = Integer.parseInt(maxFuel);
-            milesPer = Integer.parseInt(mpg);
-            iMaxSpeed = Integer.parseInt(maxSpeed);
-        } catch(NumberFormatException e){
-            System.out.println("Invalid Entry. Exiting.");
-            System.exit(0);
+        int milesPer = -1, iMaxSpeed = -1, iMaxFuel = -1;
+        while(milesPer < 0 || iMaxSpeed < 0 || iMaxFuel < 0){
+            try{
+                iMaxFuel = Integer.parseInt(maxFuel);
+                milesPer = Integer.parseInt(mpg);
+                iMaxSpeed = Integer.parseInt(maxSpeed);
+            } catch(NumberFormatException e){
+                System.out.println("Invalid Entry. Exiting.");
+                System.exit(0);
+            }
+            if(iMaxFuel < 0){
+                maxFuel = JOptionPane.showInputDialog("What is the max fuel capacity of the car?");
+            }
+
+            if (milesPer < 0){
+                mpg = JOptionPane.showInputDialog("What is the miles per gallon on the car?");
+            }
+
+            if(iMaxFuel < 0){
+                maxSpeed = JOptionPane.showInputDialog("What is the max speed of the car?");
+            }
         }
 
         //Create the objects needed.
@@ -55,6 +68,17 @@ public class Assignment3{
             } catch(NumberFormatException e){
                 System.out.println("Invalid Entry. Exiting.");
                 System.exit(0);
+            }
+            while(userDist[x] < 0){
+                d = JOptionPane.showInputDialog("What distance do you travel in leg: "+(x+1)+"?");
+                if(userDist[x] < 0){
+                    try{
+                        userDist[x] = Integer.parseInt(d);
+                    } catch (NumberFormatException e){
+                        System.out.println("Invalid Entry. Exiting.");
+                        System.exit(0);
+                    }
+                }
             }
         }
         
